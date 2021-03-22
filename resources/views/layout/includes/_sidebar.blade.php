@@ -5,6 +5,7 @@
                 <li><a href="{{url('/dashboard')}}" @if(Request::path() === 'dashboard') class="active" @endif><i
                             class="fa fa-home"></i> <span>Dashboard</span></a></li>
                 @if(session('id_role')==1)
+                    <li><a href="/kelolaAlumniAdmin/{{session('id_user')}}" @if(Request::path() === 'kelolaAlumniAdmin/' . session('id_user')) class="active" @elseif(Request::is('kelolaAlumniAdmin/' . session('id_user') . '/*')) class="active" @endif><i class="fas fa-graduation-cap"></i> <span>Alumni</span></a></li>
                     <li><a href="/kelolaSiswaAdmin/{{session('id_user')}}" @if(Request::path() === 'kelolaSiswaAdmin/' . session('id_user')) class="active" @elseif(Request::is('kelolaSiswaAdmin/' . session('id_user') . '/*')) class="active" @endif><i class="fas fa-user-alt"></i> <span>Siswa</span></a></li>
                     <li><a href="/kelolaGuruAdmin/{{session('id_user')}}" @if(Request::path() === 'kelolaGuruAdmin/' . session('id_user')) class="active" @elseif(Request::is('kelolaGuruAdmin/' . session('id_user') . '/*')) class="active" @endif><i class="fas fa-chalkboard-teacher"></i> <span>Guru</span></a></li>
                     <li><a href="/kelolaSekolahAdmin/{{session('id_user')}}" @if(Request::path() === 'kelolaSekolahAdmin/' . session('id_user')) class="active" @elseif(Request::is('kelolaSekolahAdmin/' . session('id_user') . '/*')) class="active" @endif><i class="fas fa-archway"></i> <span>Sekolah</span></a></li>
@@ -21,7 +22,7 @@
                     <li><a href="/rapor/{{session('id_user')}}"@if(Request::path() === 'rapor/' . session('id_user')) class="active" @endif><i class="far fa-clipboard"></i> <span>Rapor</span></a></li>
                     <li><a href="/soalUjian/{{session('id_user')}}" @if(Request::path() === 'soalUjian/' . session('id_user')) class="active" @elseif(Request::is('soalUjian/' . session('id_user') . '/*')) class="active" @elseif(Request::is('jawaban/' . session('id_user') . '/*')) class="active" @endif><i class="far fa-clone"></i> <span>Soal Ujian</span></a></li>
                     <li><a href="/spp/{{session('id_user')}}" @if(Request::path() === 'spp/' . session('id_user')) class="active" @endif><i class="fas fa-money"></i> <span>SPP</span></a></li>
-                    <li><a href="/presensiSiswa/{{session('id_user')}}" @if(Request::path() === 'presensiSiswa/' . session('id_user')) class="active" @endif><i class="far fa-calendar-check"></i> <span>Presensi Kehadiran</span></a></li>
+                    <li><a href="/presensiSiswa/{{session('id_user')}}" @if(Request::path() === 'presensiSiswa/' . session('id_user')) class="active" @endif><i class="far fa-calendar-check"></i> <span>Presensi Kehadiran</span></a>
                 @endif
             </ul>
         </nav>

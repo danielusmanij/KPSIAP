@@ -55,6 +55,15 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     Route::get('/presensiGuru/{id_user}', 'PresensiController@indexGuru');
     Route::post('/presensiGuru/{id_user}', 'PresensiController@storeGuru');
 
+    // Kelola Admin
+    // --Admin
+    Route::get('/kelolaAlumniAdmin/{id_user}', 'KelolaAlumniController@indexAdmin');
+    Route::get('/kelolaAlumniAdmin/{id_user}/{NIS}', 'KelolaAlumniController@indexThisAlumniAdmin');
+    Route::get('/kelolaAlumniAdmin/{id_user}/{NIS}/edit', 'KelolaAlumniController@editThisAlumniAdmin');
+    Route::patch('/kelolaAlumniAdmin/{id_user}/{NIS}', 'KelolaAlumniController@updateThisSiswa');
+    Route::get('/kelolaAlumniAdmin/{id_user}/{NIS}/{id_orang_tua}/edit', 'KelolaAlumniController@editThisOrangTua');
+    Route::patch('/kelolaAlumniAdmin/{id_user}/{NIS}/{id_orang_tua}', 'KelolaAlumniController@updateThisOrangTua');
+
     // Kelola Siswa
     //--Guru
     Route::get('/kelolaSiswaGuru/{id_user}', 'KelolaSiswaController@indexGuru');
