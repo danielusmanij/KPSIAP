@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Soal Ujian</h3>
+                        <h3 class="panel-title" style="font-size: 60px">Soal Ujian</h3>
                     </div>
                     <div class="panel-body">
                             <table class="table table-hover">

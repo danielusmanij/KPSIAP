@@ -24,12 +24,12 @@
                             @foreach($spp as $data)
                                 <tr>
                                     <th>{{$data->periode_spp_detail}}</th>
-                                    <th>{{$data->harga_spp_detail}}</th>
+                                    <th>@currency($data->harga_spp_detail)</th>
                                 </tr>
                             @endforeach
                             <tr>
+                                <th>Total Tagihan =  &nbsp @currency($totalSpp)</th>
                                 <th></th>
-                                <th>Total Tagihan =  &nbsp {{$totalSpp}}</th>
                             </tr>
                             </tbody>
                         </table>

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Presensi Siswa</h3>
+                        <h3 class="panel-title" style="font-size:60px">Presensi Siswa</h3>
                     </div>
                     <div class="panel-body">
                         <form method="post" action="/presensiSiswa/{{session('id_user')}}">

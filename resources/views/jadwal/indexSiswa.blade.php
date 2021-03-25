@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Jadwal Mata Pelajaran</h3>
+                        <h3 class="panel-title" style="font-size:60px">Jadwal Mata Pelajaran</h3>
                     </div>
                     <div class="panel-body">
                         @foreach ($jadwal->unique('hari') as $data)
@@ -24,8 +24,8 @@
                                 @foreach($jadwal as $data2)
                                     @if($data2->hari == $data->hari)
                                 <tr>
-                                    <td>  {{$data2->nama_mata_pelajaran}} </td>
-                                    <td>  {{$data2->waktu}} </td>
+                                    <td class="col-lg-6 col-sm-6">{{$data2->nama_mata_pelajaran}} </td>
+                                    <td class="col-lg-6 col-sm-6">{{$data2->waktu}} </td>
                                 </tr>
                                     @endif
                                 @endforeach
