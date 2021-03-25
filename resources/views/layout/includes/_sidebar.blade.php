@@ -23,6 +23,9 @@
                     <li><a href="/soalUjian/{{session('id_user')}}" @if(Request::path() === 'soalUjian/' . session('id_user')) class="active" @elseif(Request::is('soalUjian/' . session('id_user') . '/*')) class="active" @elseif(Request::is('jawaban/' . session('id_user') . '/*')) class="active" @endif><i class="far fa-clone"></i> <span>Soal Ujian</span></a></li>
                     <li><a href="/spp/{{session('id_user')}}" @if(Request::path() === 'spp/' . session('id_user')) class="active" @endif><i class="fas fa-money"></i> <span>SPP</span></a></li>
                     <li><a href="/presensiSiswa/{{session('id_user')}}" @if(Request::path() === 'presensiSiswa/' . session('id_user')) class="active" @endif><i class="far fa-calendar-check"></i> <span>Presensi Kehadiran</span></a>
+                @elseif(session('id_role')==4)
+                    <li><a href="/nilaiAlumni/{{session('id_user')}}" @if(Request::path() === 'nilaiAlumni/' . session('id_user')) class="active" @endif><i class="far fa-calendar-alt"></i> <span>Nilai</span></a></li>
+                    <li><a href="/ijazah/{{session('id_user')}}" @if(Request::path() === 'ijazah/' . session('id_user')) class="active" @endif><i class="fas fa-book-reader"></i> <span>Ijazah</span></a></li>
                 @endif
             </ul>
         </nav>
