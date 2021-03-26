@@ -14,7 +14,7 @@
                             <thead>
                             <tr>
                                 <th>ID Alumni</th>
-                                <th>Tahun Lulus</th>
+                                <th>Tanggal Lulus</th>
                                 <th>Nama</th>
                             </tr>
                             </thead>

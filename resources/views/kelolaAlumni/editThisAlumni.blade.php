@@ -1,6 +1,6 @@
 @extends('layout/main')
 @section('container')
-    @if(session('id_role') == 2)
+    @if(session('id_role') == 4)
         <!-- MAIN -->
         <div class="main">
             <!-- MAIN CONTENT -->
@@ -16,10 +16,9 @@
                                     <div class="profile-main">
                                         <img src="{{$siswa->getProfilePhoto()}}" width="100px" height="100px"
                                              class="img-circle">
-                                        <h3 class="name">{{$siswa->nama_depan}} {{$siswa->nama_belakang}}</h3>
+                                        <h3 class="name">{{$alumni->nama_depan}} {{$alumni->nama_belakang}}</h3>
 
-                                        <h4>{{$role->nama_role}} - {{$kelas->tingkat_kelas}}
-                                            - {{$kelas->nama_kelas}}</h4>
+                                        <h4>{{$role->nama_role}} - {{$alumni->tahun_lulus}}</h4>
 
                                     </div>
                                 </div>

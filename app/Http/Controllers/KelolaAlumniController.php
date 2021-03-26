@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use     App\Alumni;
+use App\Nilai;
 use App\OrangTua;
 use App\Role;
 use App\Sekolah;
@@ -30,6 +31,13 @@ class KelolaAlumniController extends Controller
             $checkOrangTua = count($orangTua);
             return view('kelolaAlumni.indexThisAlumni', ['alumni' => $alumni, 'sekolah' => $sekolah, 'role' => $role, 'orangTua' => $orangTua, 'checkOrangTua' => $checkOrangTua]);
    }
+    //     public function updatenilai(Request $request, $id_user, $id_alumni, $id_nilai, $kode_mata_pelajaran){
+    //         Nilai::where('id_nilai',$id_nilai)
+    //             ->where([
+    //                 'poin nilai' => $request->txtPoinNilai,
+    //             ]);
+    //         return redirect('/kelolaAlumniAdmin/'. $id_user.'/'.$id_alumni.'/'.$kode_mata_pelajaran) ->with('message', 'Nilai Berhasil Diubah');
+    // }
 //
 //    public function editThisAlumniAdmin($id_user, $id_alumni){
 //        $alumni = Alumni::find($id_alumni);
