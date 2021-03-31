@@ -24,8 +24,8 @@
                     <li><a href="/spp/{{session('id_user')}}" @if(Request::path() === 'spp/' . session('id_user')) class="active" @endif><i class="fas fa-money"></i> <span>SPP</span></a></li>
                     <li><a href="/presensiSiswa/{{session('id_user')}}" @if(Request::path() === 'presensiSiswa/' . session('id_user')) class="active" @endif><i class="far fa-calendar-check"></i> <span>Presensi Kehadiran</span></a>
                 @elseif(session('id_role')==4)
-                    <li><a href="/nilaiAlumni/{{session('id_user')}}" @if(Request::path() === 'nilaiAlumni/' . session('id_user')) class="active" @endif><i class="far fa-calendar-alt"></i> <span>Nilai</span></a></li>
-                    <li><a href="/ijazah/{{session('id_user')}}" @if(Request::path() === 'ijazah/' . session('id_user')) class="active" @endif><i class="fas fa-book-reader"></i> <span>Ijazah</span></a></li>
+                    <li><a href="/rapor/{{session('id_user')}}" @if(Request::path() === 'rapor/' . session('id_user')) class="active" @elseif(Request::is('rapor/' . session('id_user') . '/*')) class="active" @endif><i class="fas fa-book-open"></i> <span>Rapor</span></a></li>
+                    <li><a href="/ijazah/{{session('id_user')}}" @if(Request::path() === 'ijazah/' . session('id_user')) class="active" @elseif(Request::is('ijazah/' . session('id_user') . '/*')) class="active" @endif><i class="fas fa-book-reader"></i> <span>Ijazah</span></a></li>
                 @endif
             </ul>
         </nav>

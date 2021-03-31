@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jadwal;
 use App\Kelas;
 use App\Nilai;
 use App\OrangTua;
@@ -26,7 +27,15 @@ class KelolaSiswaController extends Controller
             ->orderBy('mata_pelajaran.nama_mata_pelajaran', 'DESC')
             ->orderBy('jadwal.NIS', 'ASC')
             ->get();
-        return view('kelolaSiswa.indexGuru', ['kelolaSiswa' => $kelolaSiswa]);
+        $kelolaSiswa2 = Jadwal::
+        select('siswa.NIS', 'siswa.nama_depan', 'siswa.nama_belakang', 'jadwal.NIS', 'jadwal.kode_mata_pelajaran', 'jadwal.hari', 'jadwal.waktu', 'mata_pelajaran.kode_mata_pelajaran', 'mata_pelajaran.nama_mata_pelajaran', 'jadwal.NIP')
+            ->join('siswa','jadwal.NIS','=','jadwal.NIS')
+            ->join('mata_pelajaran', 'jadwal.kode_mata_pelajaran', '=', 'mata_pelajaran.kode_mata_pelajaran')
+            ->where('jadwal.NIP', '=', $id_user)
+            ->orderBy('mata_pelajaran.nama_mata_pelajaran', 'DESC')
+            ->orderBy('jadwal.NIS', 'ASC')
+            ->get();
+        return view('kelolaSiswa.indexGuru', ['kelolaSiswa' => $kelolaSiswa2]);
     }
 
     public function indexAdmin($id_user)
