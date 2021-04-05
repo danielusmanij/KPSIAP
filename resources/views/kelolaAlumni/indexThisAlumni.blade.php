@@ -1,6 +1,7 @@
 @extends('layout/main')
 @section('container')
-    @if(session('id_role')==4)
+    @if(session('id_role')==4
+    )
         <!-- MAIN -->
         <div class="main">
             <!-- MAIN CONTENT -->
