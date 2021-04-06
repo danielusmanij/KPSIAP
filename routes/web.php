@@ -40,6 +40,9 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     //--Siswa
     Route::get('/nilai/{id_user}', 'NilaiController@index');
 
+    //Ijazah
+    Route::get('/ijazah', 'IjazahController@index');
+
     // Rapor
     //--Siswa
     Route::get('/rapor/{id_user}', 'RaporController@index');

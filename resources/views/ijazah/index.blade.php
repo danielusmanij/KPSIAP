@@ -18,14 +18,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($soalUjian->unique('nama_mata_pelajaran') as $data)
-                                <tr>
-                                    <td>{{$data->nama_mata_pelajaran}}</td>
-                                    <td>
-                                        <a href="/soalUjian/{{session('id_user')}}/{{$data->kode_mata_pelajaran}}" class="btn btn-info">Lihat Soal Ujian</a>
-                                    </td>
-                                </tr>
-                            @endforeach
                             </tbody>
                         </table>
                         <br>

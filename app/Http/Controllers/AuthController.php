@@ -21,8 +21,8 @@ class AuthController extends Controller
         $idSekolah = User::where(['id_user'=>$noInduk,'password'=>md5($password)])->value('id_sekolah');
         $username = User::where(['id_user'=>$noInduk,'password'=>md5($password)])->value('username');
 
-        $checkLogin= User::where(['id_user'=>$noInduk,'password'=>md5($password)])->get();
-        if(count($checkLogin) > 0){
+        $checkLogin= User::where(['id_user'=>$noInduk,'password'=>md5($password)])->first();
+        if(!empty($checkLogin)){
             session(['login_success' => true]);
             session(['id_role' => $idRole]);
             session(['id_user' => $noInduk]);
