@@ -14,10 +14,17 @@
                             <thead>
                             <tr>
                                 <th>Daftar Sertifikat</th>
+                                <th></th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>Sertifikat-1</td>
+                                    <td>
+                                        <a href="/download" class="btn btn-large pull-right"><i class="icon-download-alt"> </i> Download Sertifikat </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <br>

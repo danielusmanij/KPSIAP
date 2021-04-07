@@ -42,9 +42,11 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
 
     //Ijazah
     Route::get('/ijazah', 'IjazahController@index');
+    Route::get('/download', 'IjazahController@getDownload');
 
     //Sertifikat
     Route::get('/sertifikat', 'SertifikatController@index');
+    Route::get('/download', 'SertifikatController@getDownload');
 
     // Rapor
     //--Siswa
