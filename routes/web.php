@@ -43,6 +43,9 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     //Ijazah
     Route::get('/ijazah', 'IjazahController@index');
 
+    //Sertifikat
+    Route::get('/sertifikat', 'SertifikatController@index');
+
     // Rapor
     //--Siswa
     Route::get('/rapor/{id_user}', 'RaporController@index');
