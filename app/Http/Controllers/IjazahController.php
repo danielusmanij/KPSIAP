@@ -10,10 +10,10 @@ class IjazahController extends Controller
         return view('ijazah.index');
     }
     public function getDownload(){
-        $file= public_path(). "/download/info.pdf";
+        $file= public_path(). "/assets/sertifikat/info.pdf";
         $headers = array(
               'Content-Type: application/pdf',
             );
-    return response()->download($file, 'filename.pdf', $headers);
+    return response()->download($file, 'ijazah.pdf', $headers);
     }
 }

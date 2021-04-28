@@ -11,10 +11,10 @@ class SertifikatController extends Controller
         return view('sertifikat.index');
     }
     public function getDownload(){
-        $file= public_path(). "/download/info.pdf";
+        $file= public_path(). "/assets/sertifikat/info.pdf";
         $headers = array(
               'Content-Type: application/pdf',
             );
-    return response()->download($file, 'filename.pdf', $headers);
+    return response()->download($file, 'sertifikat.pdf', $headers);
     }
 }

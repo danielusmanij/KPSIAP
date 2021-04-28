@@ -25,6 +25,18 @@
                                         <a href="/download" class="btn btn-large pull-right"><i class="icon-download-alt"> </i> Download Ijazah </a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>Ijazah SMP</td>
+                                    <td>
+                                        <a href="/download" class="btn btn-large pull-right"><i class="icon-download-alt"> </i> Download Ijazah </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ijazah SMA</td>
+                                    <td>
+                                        <a href="/download" class="btn btn-large pull-right"><i class="icon-download-alt"> </i> Download Ijazah </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <br>
