@@ -22,14 +22,12 @@ class KelolaAlumniController extends Controller
         return view('kelolaAlumni.indexAdmin', ['kelolaAlumni' => $kelolaAlumni]);
     }
 
-       public function indexThisAlumniAdmin($id_user, $id_alumni){
+       public function indexThisAlumniAdmin($id_user, $id_alumni, $id_sekolah){
             $alumni = Alumni::find($id_alumni);
             $user = User::find($id_alumni);
-            $sekolah = Sekolah::find($user->id_sekolah);
-            $role = Role::find($user->id_role);
-            $orangTua = OrangTua::where('ID Alumni', $id_alumni)->get();
-            $checkOrangTua = count($orangTua);
-            return view('kelolaAlumni.indexThisAlumni', ['alumni' => $alumni, 'sekolah' => $sekolah, 'role' => $role, 'orangTua' => $orangTua, 'checkOrangTua' => $checkOrangTua]);
+            $tahun_lulus = Alumni::find($user->$id_alumni);
+            $sekolah = Sekolah::find($user->$id_sekolah);
+            return view('kelolaAlumni.indexThisAlumni', ['alumni' => $alumni, 'tahun_lulus' => $tahun_lulus, 'sekolah' => $sekolah]);
    }
     //     public function updatenilai(Request $request, $id_user, $id_alumni, $id_nilai, $kode_mata_pelajaran){
     //         Nilai::where('id_nilai',$id_nilai)

@@ -25,8 +25,8 @@
                     <li><a href="/presensiSiswa/{{session('id_user')}}" @if(Request::path() === 'presensiSiswa/' . session('id_user')) class="active" @endif><i class="far fa-calendar-check"></i> <span>Presensi Kehadiran</span></a>
                 @elseif(session('id_role')==4)
                     <li><a href="/sertifikat/" @if(Request::path() === 'sertifikat/') class="active" @elseif(Request::is('sertifikat/*')) @endif><i class="far fa-id-card"></i> <span>Sertifikat</span></a></li>
-                    <li><a href="/rapor/" @if(Request::path() === 'rapor/') class="active" @elseif(Request::is('rapor/*')) @endif><i class="far fa-clipboard"></i> <span>Rapor</span></a></li>
                     <li><a href="/ijazah" @if(Request::path() === 'ijazah') class="active" @elseif(Request::is('ijazah/*')) class="active" @endif><i class="fas fa-book-reader"></i> <span>Ijazah</span></a></li>
+                    <li><a href="/rapor/" @if(Request::path() === 'rapor/') class="active" @elseif(Request::is('rapor/*')) @endif><i class="far fa-clipboard"></i> <span>Rapor</span></a></li>
                 @endif
             </ul>
         </nav>
