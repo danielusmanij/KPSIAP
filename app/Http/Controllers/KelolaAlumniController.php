@@ -28,22 +28,20 @@ class KelolaAlumniController extends Controller
             $tahun_lulus = Alumni::find($user->$id_alumni);
             $sekolah = Sekolah::find($user->$id_sekolah);
             return view('kelolaAlumni.indexThisAlumni', ['alumni' => $alumni, 'tahun_lulus' => $tahun_lulus, 'sekolah' => $sekolah]);
+    }
+
+    public function editThisAlumniAdmin($id_user, $id_alumni){
+        $kelolaAlumni = Alumni::where('id_alumni', '=', $id_alumni)->get();
+        return view('kelolaAlumni.editThisAlumni', ['kelolaAlumni' => $kelolaAlumni]);
+    }
+   public function destroyThisAlumni($id_alumni,$id_user){
+        Alumni::destroy($id_alumni);
+        return redirect('/kelolaAlumniAdmin'.$id_user) ->with('message','Data telah dihapus');
    }
-    //     public function updatenilai(Request $request, $id_user, $id_alumni, $id_nilai, $kode_mata_pelajaran){
-    //         Nilai::where('id_nilai',$id_nilai)
-    //             ->where([
-    //                 'poin nilai' => $request->txtPoinNilai,
-    //             ]);
-    //         return redirect('/kelolaAlumniAdmin/'. $id_user.'/'.$id_alumni.'/'.$kode_mata_pelajaran) ->with('message', 'Nilai Berhasil Diubah');
-    // }
-//
-//    public function editThisAlumniAdmin($id_user, $id_alumni){
-//        $alumni = Alumni::find($id_alumni);
-//        $user = User::find($id_alumni);
-//        $sekolah = Sekolah::find($user->id_sekolah);
-//        $role = Role::find($user->id_role);
-//        $orangTua = OrangTua::where('ID Alumni', $id_alumni)->get();
-//        $checkOrangTua = count($orangTua);
-//        return view('kelolaAlumni.editThisAlumni', ['alumni' => $alumni,'sekolah' => $sekolah, 'role' => $role, 'orangTua' => $orangTua, 'checkOrangTua' => $checkOrangTua]);
+//    public function storeThisAlumni(Request $request){
+//         $alumni = new Alumni();
+//         $alumni->nama_depan = $request->txtNamaDepan;
+//         $alumni->nama_belakang = $request->txtNamaBelakang;
+//         $alumni->id_alumni = $request->txtidAlumni;
 //    }
 }

@@ -23,7 +23,9 @@
                                     <td>
                                         <a href="/kelolaSiswaAdmin/{{session('id_user')}}/{{$data->NIS}}">{{$data->NIS}}</a>
                                     </td>
-                                    <td>  {{$data->nama_depan}} {{$data->nama_belakang}} </td>
+                                    <td>
+                                        {{$data->nama_depan}} {{$data->nama_belakang}}
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

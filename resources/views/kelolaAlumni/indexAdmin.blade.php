@@ -31,6 +31,22 @@
                                     <td>
                                         {{$data->nama_depan}} {{$data->nama_belakang}}
                                     </td>
+                                    <td style="display: flex;">
+                                        <button>
+                                            <a href="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}/edit"><span
+                                                class="glyphicon glyphicon-edit"></span></a>
+                                        </button>
+                                        <form
+                                        action="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}/{{$data->nama_depan}}/{{$data->nama_belakang}}"
+                                        method="post">
+                                        @method('delete')
+                                        {{ csrf_field() }}
+                                            <button><a style="color:red"
+                                                        onclick="return confirm('Anda yakin menghapus data ini?')"><span
+                                                        class="glyphicon glyphicon-trash"></span></a>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -52,7 +68,7 @@
                                                 </div>
                                                 <input type="text" class="form-control" name="txtidAlumni"
                                                        id="txtidAlumni"
-                                                       placeholder="ID Alumni"
+                                                       placeholder="ID Alumni "
                                                        required>
                                                 <br>
                                                 <input type="text" class="form-control" name="txtNamaDepan"
@@ -67,8 +83,8 @@
                                                 <br>
                                                 <label for ="tanggal_lulus">Tanggal Lulus</label>
                                                 <br>
-                                                <input type="date" name="txtWaktuKegiatan"
-                                                       id="txtWaktuKegiatan"
+                                                <input type="date" name="txtTanggalLulus"
+                                                       id="txtTanggalLulus"
                                                        placeholder="Tanggal Lulus"
                                                        required>
                                                 <br><br>
