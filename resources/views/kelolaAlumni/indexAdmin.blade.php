@@ -37,7 +37,7 @@
                                                 class="glyphicon glyphicon-edit"></span></a>
                                         </button>
                                         <form
-                                        action="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}/{{$data->nama_depan}}/{{$data->nama_belakang}}"
+                                        action="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}"
                                         method="post">
                                         @method('delete')
                                         {{ csrf_field() }}
@@ -61,31 +61,31 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="post" action="/kelolaKegiatanSekolahAdmin/{{session('id_user')}}" enctype="multipart/form-data">
+                                            <form method="post" action="/kelolaAlumniAdmin/{{session('id_user')}}" enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 <div class="form-group">
                                                     <label>Input Data Alumni</label>
                                                 </div>
                                                 <input type="text" class="form-control" name="txtidAlumni"
-                                                       id="txtidAlumni"
+                                                       id="idAlumni"
                                                        placeholder="ID Alumni "
                                                        required>
                                                 <br>
                                                 <input type="text" class="form-control" name="txtNamaDepan"
-                                                       id="txtNamaDepan"
+                                                       id="nama_depan"
                                                        placeholder="Nama Depan"
                                                        required>
                                                 <br>
                                                 <input type="text" class="form-control" name="txtNamaBelakang"
-                                                       id="txtNamaBelakang"
+                                                       id="nama_belakang"
                                                        placeholder="Nama Belakang"
                                                        required>
                                                 <br>
-                                                <label for ="tanggal_lulus">Tanggal Lulus</label>
+                                                <label for ="tanggal_lulus">Tahun Lulus</label>
                                                 <br>
-                                                <input type="date" name="txtTanggalLulus"
-                                                       id="txtTanggalLulus"
-                                                       placeholder="Tanggal Lulus"
+                                                <input type="date" name="dateTahunLulus"
+                                                       id="tahun_lulus"
+                                                       placeholder="Tahun Lulus"
                                                        required>
                                                 <br><br>
                                                 <input type="submit" name="btnSubmit"

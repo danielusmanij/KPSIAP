@@ -12,17 +12,11 @@
                 @foreach($kelolaAlumni as $data)
                 <div class="panel-body">
                     <form method="post"
-                          action="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}/{{$data->nama_depan}}/{{$data->nama_belakang}}"
+                          action="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}"
                           enctype="multipart/form-data">
                         @method('patch')
                         {{ csrf_field() }}
-                        <input type="text" class="form-control"
-                            name="txtidAlumni"
-                            id="txtidAlumni"
-                            placeholder="ID Alumni "
-                            required>
-                        <br>
-                            <input type="text" class="form-control" name="txtNamaDepan"
+                        <input type="text" class="form-control" name="txtNamaDepan"
                                     id="txtNamaDepan"
                                     placeholder="Nama Depan"
                                     required>
@@ -34,8 +28,8 @@
                             <br>
                             <label for ="tanggal_lulus">Tanggal Lulus</label>
                             <br>
-                            <input type="date" name="txtTanggalLulus"
-                                    id="txtTanggalLulus"
+                            <input type="date" name="dateTanggalLulus"
+                                    id="dateTanggalLulus"
                                     placeholder="Tanggal Lulus"
                                     required>
                             <br>

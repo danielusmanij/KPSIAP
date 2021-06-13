@@ -3,13 +3,13 @@
 
 namespace App\Http\Controllers;
 
-use     App\Alumni;
+use App\Alumni;
 use App\Nilai;
 use App\OrangTua;
 use App\Role;
 use App\Sekolah;
 use App\User;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class KelolaAlumniController extends Controller
 {
@@ -34,14 +34,29 @@ class KelolaAlumniController extends Controller
         $kelolaAlumni = Alumni::where('id_alumni', '=', $id_alumni)->get();
         return view('kelolaAlumni.editThisAlumni', ['kelolaAlumni' => $kelolaAlumni]);
     }
-   public function destroyThisAlumni($id_alumni,$id_user){
+   public function destroyThisAlumni($id_alumni,$id_user)
+   {
         Alumni::destroy($id_alumni);
-        return redirect('/kelolaAlumniAdmin'.$id_user) ->with('message','Data telah dihapus');
+        return redirect('/kelolaAlumniAdmin/'.$id_user) ->with('message','Data telah dihapus');
    }
-//    public function storeThisAlumni(Request $request){
-//         $alumni = new Alumni();
-//         $alumni->nama_depan = $request->txtNamaDepan;
-//         $alumni->nama_belakang = $request->txtNamaBelakang;
-//         $alumni->id_alumni = $request->txtidAlumni;
-//    }
+   public function updateThisAlumni(Request $request, $id_user, $id_alumni)
+   {
+        Alumni::where('ID Alumni', $id_alumni)
+                ->update([
+                    'txtNamaDepan' => $request -> txtNamaDepan,
+                    'txtNamaBelakang' => $request -> txtNamaBelakang,
+                    'dateTahunLulus' => $request -> dateTahunLulus
+                ]);
+        return redirect('/kelolaAlumniAdmin/'.$id_user.'/'.$id_alumni) -> with('message','Data Alumni sudah diubah');
+   }
+   public function storeThisAlumni(Request $request, $id_user){
+        $alumni = new Alumni();
+        $alumni->id_alumni = $request->txtidAlumni;
+        $alumni->nama_depan = $request->txtNamaDepan;
+        $alumni->nama_belakang = $request->txtNamaBelakang;
+        $alumni->tahun_lulus = $request->dateTahunLulus;
+        $alumni->save();
+
+        return redirect('/kelolaAlumniAdmin/'.$id_user)->with('message','Data Berhasil ditambah');
+   }
 }
