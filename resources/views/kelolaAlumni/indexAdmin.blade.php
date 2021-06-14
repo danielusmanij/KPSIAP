@@ -16,6 +16,7 @@
                                 <th>ID Alumni</th>
                                 <th>Tanggal Lulus</th>
                                 <th>Nama</th>
+                                <th>ID Sekolah</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
@@ -30,6 +31,9 @@
                                     </td>
                                     <td>
                                         {{$data->nama_depan}} {{$data->nama_belakang}}
+                                    </td>
+                                    <td>
+                                        {{$data->id_sekolah}}
                                     </td>
                                     <td style="display: flex;">
                                         <button>
@@ -79,6 +83,11 @@
                                                 <input type="text" class="form-control" name="txtNamaBelakang"
                                                        id="nama_belakang"
                                                        placeholder="Nama Belakang"
+                                                       required>
+                                                <br>
+                                                <input type="text" class="form-control" name="txtidSekolah"
+                                                       id="idSekolah"
+                                                       placeholder="ID Sekolah"
                                                        required>
                                                 <br>
                                                 <label for ="tanggal_lulus">Tahun Lulus</label>

@@ -26,6 +26,11 @@
                                     placeholder="Nama Belakang"
                                     required>
                             <br>
+                            <input type="text" class="form-control" name="txtIdSekolah"
+                                    id="txtIdSekolah"
+                                    placeholder="ID Sekolah"
+                                    required>
+                            <br>
                             <label for ="tanggal_lulus">Tanggal Lulus</label>
                             <br>
                             <input type="date" name="dateTanggalLulus"

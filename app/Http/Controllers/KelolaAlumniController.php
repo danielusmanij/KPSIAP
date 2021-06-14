@@ -14,9 +14,8 @@ use Illuminate\Http\Request;
 class KelolaAlumniController extends Controller
 {
     public function indexAdmin($id_user){
-        $kelolaAlumni = User::select('user.id_user', 'alumni.id_alumni','alumni.tahun_lulus','alumni.nama_depan', 'alumni.nama_belakang')
+        $kelolaAlumni = User::select('user.id_user', 'alumni.id_alumni','alumni.tahun_lulus','alumni.nama_depan', 'alumni.nama_belakang','alumni.id_sekolah')
             ->join('alumni', 'user.id_user', '=', 'alumni.id_user')
-            ->where('user.id_sekolah', '=', session('id_sekolah'))
             ->orderBy('alumni.id_alumni', 'ASC')
             ->get();
         return view('kelolaAlumni.indexAdmin', ['kelolaAlumni' => $kelolaAlumni]);
