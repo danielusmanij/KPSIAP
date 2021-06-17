@@ -36,7 +36,7 @@ class KelolaAlumniController extends Controller
     }
    public function destroyThisAlumni(Alumni $idalumni,$id_user)
    {
-       DB::table('alumni') -> where('id_alumni',$idalumni) -> delete();
+    DB::table('alumni') -> where('id_alumni',$idalumni) -> delete();
         return redirect('/kelolaAlumniAdmin/'.$id_user)->with('message','Data Berhasil Dihapus');
    }
    public function updateThisAlumni(Request $request, $id_user, $id_alumni)

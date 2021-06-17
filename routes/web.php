@@ -40,14 +40,6 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     //--Siswa
     Route::get('/nilai/{id_user}', 'NilaiController@index');
 
-    //Ijazah
-    Route::get('/ijazah', 'IjazahController@index');
-    Route::get('/download', 'IjazahController@getDownload');
-
-    //Sertifikat
-    Route::get('/sertifikat', 'SertifikatController@index');
-    Route::get('/download', 'SertifikatController@getDownload');
-
     // Rapor
     //--Siswa
     Route::get('/rapor/{id_user}', 'RaporController@index');
@@ -71,6 +63,13 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     Route::post('/kelolaAlumniAdmin/{id_user}', 'KelolaAlumniController@storeThisAlumni');
     Route::delete('/kelolaAlumniAdmin/{id_user}/{id_alumni}', 'KelolaAlumniController@destroyThisAlumni');
     Route::patch('/kelolaAlumniAdmin/{id_user}/{id_alumni}', 'KelolaAlumniController@updateThisAdmin');
+     //Ijazah
+     Route::get('/ijazah', 'IjazahController@index');
+     Route::get('/download', 'IjazahController@getDownload');
+     //Sertifikat
+     Route::get('/sertifikat', 'SertifikatController@index');
+     Route::get('/download', 'SertifikatController@getDownload');
+
 
     // Kelola Siswa
     //--Guru

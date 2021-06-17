@@ -15,6 +15,6 @@ class SertifikatController extends Controller
         $headers = array(
               'Content-Type: application/pdf',
             );
-    return response()->download($file, 'sertifikat.pdf', $headers);
+    return response()->download($file, 'data.pdf', $headers);
     }
 }
