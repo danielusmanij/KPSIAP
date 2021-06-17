@@ -24,7 +24,7 @@
                             @foreach($kelolaAlumni as $data)
                                 <tr>
                                     <td>
-                                        <a href="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}">{{$data->id_alumni}}</a>
+                                        {{$data->id_alumni}}
                                     </td>
                                     <td>
                                         {{$data->tahun_lulus}}

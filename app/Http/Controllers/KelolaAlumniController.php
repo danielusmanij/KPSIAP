@@ -10,6 +10,7 @@ use App\Role;
 use App\Sekolah;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KelolaAlumniController extends Controller
 {
@@ -33,10 +34,10 @@ class KelolaAlumniController extends Controller
         $kelolaAlumni = Alumni::where('id_alumni', '=', $id_alumni)->get();
         return view('kelolaAlumni.editThisAlumni', ['kelolaAlumni' => $kelolaAlumni]);
     }
-   public function destroyThisAlumni($id_alumni,$id_user)
+   public function destroyThisAlumni(Alumni $idalumni,$id_user)
    {
-        Alumni::destroy($id_alumni);
-        return redirect('/kelolaAlumniAdmin/'.$id_user) ->with('message','Data telah dihapus');
+       DB::table('alumni') -> where('id_alumni',$idalumni) -> delete();
+        return redirect('/kelolaAlumniAdmin/'.$id_user)->with('message','Data Berhasil Dihapus');
    }
    public function updateThisAlumni(Request $request, $id_user, $id_alumni)
    {
@@ -48,14 +49,15 @@ class KelolaAlumniController extends Controller
                 ]);
         return redirect('/kelolaAlumniAdmin/'.$id_user.'/'.$id_alumni) -> with('message','Data Alumni sudah diubah');
    }
-   public function storeThisAlumni(Request $request, $id_user){
-        $alumni = new Alumni();
-        $alumni->id_alumni = $request->txtidAlumni;
-        $alumni->nama_depan = $request->txtNamaDepan;
-        $alumni->nama_belakang = $request->txtNamaBelakang;
-        $alumni->tahun_lulus = $request->dateTahunLulus;
-        $alumni->save();
-
-        return redirect('/kelolaAlumniAdmin/'.$id_user)->with('message','Data Berhasil ditambah');
+   public function storeThisAlumni(Request $request, $id_user)
+   {
+    DB::table('alumni')->insert([
+        'id_alumni' => $request->id_alumni,
+        'tahun_lulus' => $request->tahun_lulus,
+        'nama_depan' => $request->nama_depan,
+        'nama_belakang' => $request->nama_belakang,
+        'id_sekolah' => $request->id_sekolah
+    ]);
+    return redirect('/kelolaAlumniAdmin/'.$id_user)->with('message','Data Berhasil ditambah');
    }
 }
