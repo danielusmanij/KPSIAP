@@ -10,6 +10,10 @@ class Alumni extends Model
 {
     protected $table = 'alumni';
     protected $primaryKey = 'id_alumni';
+
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = ['id_alumni','tahun_lulus', 'nama_depan', 'nama_belakang', 'id_user', 'id_sekolah'];
     public $timestamps = false;
 

@@ -37,18 +37,17 @@
                                     </td>
                                     <td style="display: flex;">
                                         <button>
-                                            <a href="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}/edit"><span
+                                            <a href="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}"><span
                                                 class="glyphicon glyphicon-edit"></span></a>
                                         </button>
-                                        <form
-                                        action="/kelolaAlumniAdmin/{{session('id_user')}}/{{$data->id_alumni}}"
-                                        method="post">
-                                        @method('delete')
-                                        {{ csrf_field() }}
-                                            <button><a style="color:red"
-                                                        onclick="return confirm('Anda yakin menghapus data ini?')"><span
-                                                        class="glyphicon glyphicon-trash"></span></a>
-                                            </button>
+                                        <form action="/kelolaAlumniAdmin/{{$data->id_alumni}}/delete" method="post">
+                                            @method('delete')
+                                            {{ csrf_field() }}
+                                                <button>
+                                                    <a style="color:red"
+                                                    onclick="return confirm('Anda yakin menghapus data ini?')"><span
+                                                    class="glyphicon glyphicon-trash"></span></a>
+                                                </button>
                                         </form>
                                     </td>
                                 </tr>
@@ -70,32 +69,38 @@
                                                 <div class="form-group">
                                                     <label>Input Data Alumni</label>
                                                 </div>
-                                                <input type="text" class="form-control" name="txtidAlumni"
-                                                       id="idAlumni"
-                                                       placeholder="ID Alumni "
-                                                       required>
+                                                <input type="text" class="form-control"
+                                                    name="txtidAlumni"
+                                                    id="txtidAlumni"
+                                                    placeholder="ID Alumni "
+                                                    value="{{old('txtidAlumni')}}"
+                                                    required>
                                                 <br>
                                                 <input type="text" class="form-control" name="txtNamaDepan"
-                                                       id="nama_depan"
-                                                       placeholder="Nama Depan"
-                                                       required>
+                                                    id="txtNamaDepan"
+                                                    placeholder="Nama Depan"
+                                                    value="{{old('txtNamaDepan')}}"
+                                                    required>
                                                 <br>
                                                 <input type="text" class="form-control" name="txtNamaBelakang"
-                                                       id="nama_belakang"
-                                                       placeholder="Nama Belakang"
-                                                       required>
+                                                    id="txtNamaBelakang"
+                                                    placeholder="Nama Belakang"
+                                                    value="{{old('txtNamaBelakang')}}"
+                                                    required>
                                                 <br>
                                                 <input type="text" class="form-control" name="txtidSekolah"
-                                                       id="idSekolah"
-                                                       placeholder="ID Sekolah"
-                                                       required>
+                                                    id="txtidSekolah"
+                                                    placeholder="ID Sekolah"
+                                                    value="{{old('txtidSekolah')}}"
+                                                    required>
                                                 <br>
                                                 <label for ="tanggal_lulus">Tahun Lulus</label>
                                                 <br>
                                                 <input type="date" name="dateTahunLulus"
-                                                       id="tahun_lulus"
-                                                       placeholder="Tahun Lulus"
-                                                       required>
+                                                    id="dateTahunlulus"
+                                                    placeholder="Tahun Lulus"
+                                                    value="{{old('dateTahunLulus')}}"
+                                                    required>
                                                 <br><br>
                                                 <input type="submit" name="btnSubmit"
                                                        class="btn btn-primary btn-lg btn-block">
