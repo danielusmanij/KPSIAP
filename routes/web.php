@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KelolaAlumniController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -65,14 +66,22 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     Route::get('/presensiGuru/{id_user}', 'PresensiController@indexGuru');
     Route::post('/presensiGuru/{id_user}', 'PresensiController@storeGuru');
 
-    // Kelola Admin
+    // Kelola Alumni
     // --Admin
     Route::get('/kelolaAlumniAdmin/{id_user}', 'KelolaAlumniController@indexAdmin');
-    Route::get('/kelolaAlumniAdmin/{id_user}/{NIS}', 'KelolaAlumniController@indexThisAlumniAdmin');
-    Route::get('/kelolaAlumniAdmin/{id_user}/{NIS}/edit', 'KelolaAlumniController@editThisAlumniAdmin');
-    Route::patch('/kelolaAlumniAdmin/{id_user}/{NIS}', 'KelolaAlumniController@updateThisSiswa');
-    Route::get('/kelolaAlumniAdmin/{id_user}/{NIS}/{id_orang_tua}/edit', 'KelolaAlumniController@editThisOrangTua');
-    Route::patch('/kelolaAlumniAdmin/{id_user}/{NIS}/{id_orang_tua}', 'KelolaAlumniController@updateThisOrangTua');
+    Route::get('/kelolaAlumniAdmin/{id_user}/{id_alumni}', 'KelolaAlumniController@indexThisAlumniAdmin');
+    Route::get('/kelolaAlumniAdmin/{id_user}/{id_alumni}', 'KelolaAlumniController@viewUpdate');
+    Route::get('/kelolaAlumniAdmin/{id_user}/{id_alumni}/edit', 'KelolaAlumniController@editThisAlumni');
+    Route::post('/kelolaAlumniAdmin/{id_user}', 'KelolaAlumniController@storeThisAlumni');
+    Route::delete('/kelolaAlumniAdmin/{id_alumni}', 'KelolaAlumniController@destroyThisAlumni');
+    Route::patch('/kelolaAlumniAdmin/{id_user}/{id_alumni}', 'KelolaAlumniController@updateThisAlumniAdmin');
+     //Ijazah
+     Route::get('/ijazah', 'IjazahController@index');
+     Route::get('/download', 'IjazahController@getDownload');
+     //Sertifikat
+     Route::get('/sertifikat', 'SertifikatController@index');
+     Route::get('/download', 'SertifikatController@getDownload');
+
 
     // Kelola Siswa
     //--Guru
@@ -94,6 +103,9 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     Route::get('/kelolaGuruAdmin/{id_user}/{NIP}', 'KelolaGuruController@indexThisGuruAdmin');
     Route::get('/kelolaGuruAdmin/{id_user}/{NIP}/edit', 'KelolaGuruController@editThisGuruAdmin');
     Route::patch('/kelolaGuruAdmin/{id_user}/{NIP}', 'KelolaGuruController@updateThisGuruAdmin');
+    Route::delete('/kelolaGuruAdmin/{NIP}', 'KelolaGuruController@destroyThisGuru');
+    Route::post('/kelolaGuruAdmin/{id_user}', 'KelolaGuruController@storeThisGuru');
+
 
     //Kelola Sekolah
     //--Admin
