@@ -47,6 +47,16 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     // SPP
     //--Siswa
     Route::get('/spp/{id_user}', 'SppController@index');
+    Route::get('/spp', 'SppController@indexaja');
+    Route::patch('/buktiPembayaran/{id_spp_admin}','SppController@buktiPembayaran');
+    //--Admin
+    Route::get('/kelolaSppSiswa/{id_user}','SppController@viewSpp');
+    Route::get('/indexSpp','SppController@viewSpp');
+    Route::get('/tambahSpp','SppController@formSpp');
+    Route::get('/sppInputSiswa','SppController@viewAdd');
+    Route::post('/sppInputSiswa','SppController@addSpp');
+    Route::post('/verifikasiSpp/{id_spp_admin}','SppController@verifikasiSpp');
+    Route::get('/download/pdf','SppController@createPDF');
     // Presensi
     //--Siswa
     Route::get('/presensiSiswa/{id_user}', 'PresensiController@indexSiswa');
@@ -77,7 +87,7 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     Route::patch('/kelolaSiswaAdmin/{id_user}/{NIS}', 'KelolaSiswaController@updateThisSiswa');
     Route::get('/kelolaSiswaAdmin/{id_user}/{NIS}/{id_orang_tua}/edit', 'KelolaSiswaController@editThisOrangTua');
     Route::patch('/kelolaSiswaAdmin/{id_user}/{NIS}/{id_orang_tua}', 'KelolaSiswaController@updateThisOrangTua');
-
+    Route::get('/export/{id_user}', 'KelolaSiswaController@exportIndex');
     //Kelola Guru
     //--Admin
     Route::get('/kelolaGuruAdmin/{id_user}', 'KelolaGuruController@indexAdmin');
@@ -128,6 +138,12 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
     //--Siswa
     Route::get('/jawaban/{id_user}/{kode_mata_pelajaran}/{id_soal_ujian}', 'JawabanController@indexSiswa');
     Route::post('/jawaban/{id_user}/{kode_mata_pelajaran}/{id_soal_ujian}', 'JawabanController@storeJawaban');
+//    Route::post('/jawaban/{id_user}/{kode_mata_pelajaran}/{id_soal_ujian}', 'JawabanController@uploadJawaban');
+    //kelola kehadiran siswa
+    Route::get('/kehadiranSiswa/{id_user}','PresensiController@kehadiranSiswa');
+    Route::get('/kehadiranSiswa/{id_user}','PresensiController@viewKehadiran');
+    Route::post('/verifikasi/{id}','PresensiController@verifikasiSiswa');
+//    Route::get('/export/{id_user}','SppController@exportSpp');
 
 
 });
@@ -139,4 +155,7 @@ Route::group(['middleware' => 'CheckLoginMiddleware'], function() {
 
     // Logout
     Route::get('/logout', 'AuthController@logout');
+
+    //export
+
 

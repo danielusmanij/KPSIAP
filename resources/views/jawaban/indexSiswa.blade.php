@@ -29,6 +29,7 @@
                                 <th>Nama Siswa</th>
                                 <th>File Jawaban</th>
                                 <th>Nilai</th>
+                                <th>Upload Jawaban</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -43,6 +44,10 @@
                                     </td>
                                     <td>
                                         {{$data->poin_nilai}}
+                                    </td>
+                                    <td>
+                                        <input type="file" name="file">
+                                        <input type="submit" value="Upload" class="btn btn-primary">
                                     </td>
                                 </tr>
                             @endforeach

@@ -18,6 +18,16 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script >
+        function yesnoCheck(that) {
+            if (that.value == "upload") {
+                document.getElementById("bukti").style.display = "block";
+            }
+            else if(that.value == "bayarLangsung"){
+                document.getElementById("bukti").style.display = "none";
+            }
+        }
+    </script>
 </head>
 
 <body>

@@ -39,8 +39,8 @@
                                 @endforeach
                                                                 </select>
                             <br><br>
-                            <input type="submit" name="btnSubmit"
-                            class="btn btn-primary btn-lg btn-block">
+                            <input type="submit" name="btnSubmit" class="btn btn-primary btn-lg btn-block">
+
                             <a href="{{ url()->previous() }}"
                                class="btn btn-default btn-lg btn-block">Cancel</a>
 

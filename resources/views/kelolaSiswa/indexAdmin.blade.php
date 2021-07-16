@@ -15,6 +15,7 @@
                             <tr>
                                 <th>NIS</th>
                                 <th>Nama</th>
+                                <th>Detail</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -24,6 +25,7 @@
                                         <a href="/kelolaSiswaAdmin/{{session('id_user')}}/{{$data->NIS}}">{{$data->NIS}}</a>
                                     </td>
                                     <td>  {{$data->nama_depan}} {{$data->nama_belakang}} </td>
+                                    <td><a href="/export/{{session('id_user')}}">''''''''''''</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

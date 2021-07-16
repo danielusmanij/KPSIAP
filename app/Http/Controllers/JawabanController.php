@@ -42,12 +42,12 @@ class JawabanController extends Controller
         }
         $jawaban->save();
 
-        $nilai = new Nilphpartiai;
-        $nilai->id_soal_ujian = $id_soal_ujian;
-        $nilai->kode_mata_pelajaran = $kode_mata_pelajaran;
-        $nilai->NIS = $id_user;
-        $nilai->poin_nilai = 0;
-        $nilai->save();
+//        $nilai = new Nilphpartiai;
+//        $nilai->id_soal_ujian = $id_soal_ujian;
+//        $nilai->kode_mata_pelajaran = $kode_mata_pelajaran;
+//        $nilai->NIS = $id_user;
+//        $nilai->poin_nilai = 0;
+//        $nilai->save();
 
         return redirect('/jawaban/' . $id_user . '/' . $kode_mata_pelajaran . '/' . $id_soal_ujian)->with('message', 'Jawaban Berhasil Ditambah');
     }

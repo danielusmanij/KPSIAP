@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sistem Informasi Akademik Terpadu</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/vendor/linearicons/style.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/main.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:8000/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="http://127.0.0.1:8000/assets/img/favicon.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="brand">
+        <img src="http://127.0.0.1:8000/assets/img/logo-color.png" alt="Siap Logo" class="img-responsive logo">
+    </div>
+    <div class="container-fluid">
+        <div class="navbar-btn">
+            <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+        </div>
+        <div id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span>Arman sutedja</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/profile/210872469"><i class="lnr lnr-user"></i> <span>Profil Saya</span></a></li>
+                        <li><a href="/editPassword/210872469"><i class="lnr lnr-lock"></i> <span>Ubah Kata Sandi</span></a></li>
+                        <li><a href="http://127.0.0.1:8000/logout"><i class="lnr lnr-exit"></i> <span>Keluar</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- END NAVBAR -->
+    <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar">
+    <div class="sidebar-scroll">
+        <nav>
+            <ul class="nav">
+                <li><a href="http://127.0.0.1:8000/dashboard" ><i
+                            class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                                    <li><a href="/jadwalSiswa/210872469" ><i class="far fa-calendar-alt"></i> <span>Jadwal</span></a></li>
+                    <li><a href="/nilai/210872469" ><i class="far fa-copy"></i> <span>Nilai</span></a></li>
+                    <li><a href="/rapor/210872469"><i class="far fa-clipboard"></i> <span>Rapor</span></a></li>
+                    <li><a href="/soalUjian/210872469" ><i class="far fa-clone"></i> <span>Soal Ujian</span></a></li>
+                    <li><a href="/spp/210872469" ><i class="fas fa-money"></i> <span>SPP</span></a></li>
+                    <li><a href="/presensiSiswa/210872469" ><i class="far fa-calendar-check"></i> <span>Presensi Kehadiran</span></a>
+                            </ul>
+        </nav>
+    </div>
+</div>
+    <!-- END LEFT SIDEBAR -->
+    <!-- MAIN -->
+            <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-size: 60px">Tunggakan SPP</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Jatuh Tempo</th>
+                                <th>Jumlah Tagihan</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+
+                                                            <tr>
+                                    <th>12-02-2021</th>
+                                    <th>Rp. 200.000</th>
+                                    <th> </th>
+                                </tr>
+                                                            <tr>
+                                    <th>12-03-2021</th>
+                                    <th>Rp. 300.000</th>
+                                    <th> </th>
+                                </tr>
+                                                        <tr>
+                                <th>Total Tagihan =  &nbsp Rp. 500.000</th>
+                                <th></th>
+                            </tr>
+                            </tbody>
+                           <div>
+                               <a href="http://127.0.0.1:8000/export/210872469">Export</a>
+                           </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END MAIN -->
+    <div class="clearfix"></div>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="http://127.0.0.1:8000/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/scripts/klorofil-common.js"></script>
+</body>
+
+</html>
